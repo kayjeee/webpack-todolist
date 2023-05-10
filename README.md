@@ -71,7 +71,7 @@ Since this project is a front-end application, the focus is on the presentation 
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+> Desciption
 
 - **[Task Management: Add, complete, and delete tasks as needed to stay organized.]**
 - **[Responsive Design: Enjoy a seamless experience across all devices and screen sizes]**
@@ -83,7 +83,7 @@ Since this project is a front-end application, the focus is on the presentation 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+> the link to the deployed project.
 
 - [Live Demo Link](https://kayjeee.github.io/webpack-todolist/)
 
@@ -127,19 +127,19 @@ npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-i
 
 >To run the application, use the following command:
 
-npm start
+>npm start
 This command will start a local development server and open the application in your default browser.
 
 ### Run tests
 
-Stylelint
+>Stylelint
 npx stylelint "**/*.{css,scss}"
 
-ESLint
+>ESLint
 npx eslint .
 ### Deployment
 
-You can deploy this project using:Github pages
+>You can deploy this project using:Github pages
 
 To use GitHub Pages, you will need to create a new branch called gh-pages in your repository and push your website files to this branch. Then, in your repository settings, you can enable GitHub Pages and select the gh-pages branch as the source.
 
@@ -217,15 +217,15 @@ I would like to thank the reviewer [@1GORDON](https://github.com/1GORDON)
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+> 2 questions new developers FAQ
 
-- **[Question_1]**
+- **[How do I add custom styling to the Todo List?.]**
 
-  - [Answer_1]
+  - [To add custom styling to the Todo List, you can modify the CSS file located in the public folder of the project. You can add your own CSS styles or modify the existing styles to suit your needs]
 
-- **[Question_2]**
+- **[How can I modify the functionality of the Todo List?]**
 
-  - [Answer_2]
+  - [To modify the functionality of the Todo List, you can modify the JavaScript code located in the src folder of the project. You can add new features, modify existing features, or remove features as needed to customize the application to your requirements.]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
