@@ -46,7 +46,7 @@ const edittodo = () => {
       const inputvalue = allselected[i].textContent;
       // Clear the text content of the clicked element
       allselected[i].textContent = '';
-      // Set the `type` attribute of the `input` element to `text`
+      // Set the `type` attribute of the `input` element to `text`--
       input.setAttribute('type', 'text');
       // Append the `input` element to the clicked element
       allselected[i].appendChild(input);
