@@ -7,6 +7,23 @@ class TodoList {
     const alltodos = document.getElementById('to-do-list');
     const clearbtn = document.querySelector('.to-do-clear');
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
+    todos.push({
+      description: 'Do laundry',
+      completed: false,
+      index: 1,
+    });
+
+    todos.push({
+      description: 'Buy groceries',
+      completed: true,
+      index: 2,
+    });
+
+    todos.push({
+      description: 'Clean room',
+      completed: false,
+      index: 3,
+    });
     clearbtn.style.display = 'none';
     if (todos.length > 0) {
       this.id = 0;
