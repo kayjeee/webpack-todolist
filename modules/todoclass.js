@@ -10,13 +10,13 @@ class TodoList {
     todos.push({
       description: 'Do laundry',
       completed: false,
-      index: 1,
+      index: 2,
     });
 
     todos.push({
       description: 'Buy groceries',
       completed: true,
-      index: 2,
+      index: 1,
     });
 
     todos.push({
@@ -26,6 +26,7 @@ class TodoList {
     });
     clearbtn.style.display = 'none';
     if (todos.length > 0) {
+      todos.sort((a, b) => a.index - b.index);
       this.id = 0;
       let content = '';
       for (let i = 0; i < todos.length; i += 1) {
