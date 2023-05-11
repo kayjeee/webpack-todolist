@@ -5,7 +5,6 @@ import deletetodo from '../modules/deletetodo.js';
 import edittodo from '../modules/edittodos.js';
 import interacttodo from '../modules/interactivetodo.js';
 import clearcompleted from '../modules/clearcompleted.js';
-import enableDragDrop from '../modules/dragdrop.js';
 
 const todoclass = new TodoList();
 todoclass.todosList();
@@ -14,4 +13,3 @@ deletetodo();
 edittodo();
 interacttodo();
 clearcompleted();
-enableDragDrop();
