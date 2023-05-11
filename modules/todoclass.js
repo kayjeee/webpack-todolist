@@ -16,14 +16,26 @@ class TodoList {
       for (let i = 0; i < todos.length; i += 1) {
         if (todos[i].completed === true) {
           content += `
-<li class="each-todo"><input type="checkbox" class="mycheck" id=${todos[i].index}> <p class="text-todo linthrough" id=${todos[i].index}>${todos[i].description}</p><i class="fa-solid fa-trash" id=${todos[i].index}></i></li>`;
+  <li class="each-todo"><input type="checkbox" class="mycheck" id=${todos[i].index} checked> <p class="text-todo linthrough" id=${todos[i].index}>${todos[i].description}</p><i class="fa-solid fa-trash" id=${todos[i].index}></i></li>`;
         } else {
           content += `
-<li class="each-todo"><input type="checkbox" class="mycheck" id=${todos[i].index}> <p class="text-todo" id=${todos[i].index}>${todos[i].description}</p><i class="fa-solid fa-trash" id=${todos[i].index}></i></li>`;
+  <li class="each-todo"><input type="checkbox" class="mycheck" id=${todos[i].index}> <p class="text-todo" id=${todos[i].index}>${todos[i].description}</p><i class="fa-solid fa-trash" id=${todos[i].index}></i></li>`;
         }
       }
       alltodos.innerHTML = content;
       clearbtn.style.display = 'block';
+
+      // Add event listener for the checkboxes
+      const checkboxes = document.querySelectorAll('.mycheck');
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+          const todoId = checkbox.getAttribute('id');
+          const todo = todos.find((t) => t.index === todoId);
+          todo.completed = checkbox.checked;
+          localStorage.setItem('todos', JSON.stringify(todos));
+          this.todosList();
+        });
+      });
     } else {
       alltodos.innerHTML = ' <p>No Todo List added</p>';
     }
