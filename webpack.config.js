@@ -5,13 +5,16 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    print: './src/print.js',
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
@@ -21,7 +24,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template:'./src/index.html',
+      template: './src/index.html',
     }),
   ],
   output: {

@@ -1,19 +1,15 @@
-import _ from 'lodash';
-import printMe from './print.js';
 import './style.css';
+import addTodo from '../modules/addtodo.js';
+import TodoList from '../modules/todoclass.js';
+import deletetodo from '../modules/deletetodo.js';
+import edittodo from '../modules/edittodos.js';
+import interacttodo from '../modules/interactivetodo.js';
+import clearcompleted from '../modules/clearcompleted.js';
 
- function component() {
-   const element = document.createElement('div');
-  const btn = document.createElement('button');
-
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-  element.classList.add('hello')
-   return element;
- }
-
- document.body.appendChild(component());
+const todoclass = new TodoList();
+todoclass.todosList();
+addTodo();
+deletetodo();
+edittodo();
+interacttodo();
+clearcompleted();
