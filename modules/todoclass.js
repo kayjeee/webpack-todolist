@@ -7,23 +7,7 @@ class TodoList {
     const alltodos = document.getElementById('to-do-list');
     const clearbtn = document.querySelector('.to-do-clear');
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
-    todos.push({
-      description: 'Do laundry',
-      completed: false,
-      index: 2,
-    });
 
-    todos.push({
-      description: 'Buy groceries',
-      completed: true,
-      index: 1,
-    });
-
-    todos.push({
-      description: 'Clean room',
-      completed: false,
-      index: 3,
-    });
     clearbtn.style.display = 'none';
     if (todos.length > 0) {
       todos.sort((a, b) => a.index - b.index);
@@ -32,10 +16,10 @@ class TodoList {
       for (let i = 0; i < todos.length; i += 1) {
         if (todos[i].completed === true) {
           content += `
-<li class="each-todo"><input type="checkbox" class="mycheck" id=${todos[i].index}> <p class="text-todo linthrough" id=${todos[i].index}>${todos[i].description}</p><i class="fa-solid fa-ellipsis-vertical id=${todos[i].index}"></i></li>`;
+<li class="each-todo"><input type="checkbox" class="mycheck" id=${todos[i].index}> <p class="text-todo linthrough" id=${todos[i].index}>${todos[i].description}</p><i class="fa-solid fa-trash" id=${todos[i].index}></i></li>`;
         } else {
           content += `
-<li class="each-todo"><input type="checkbox" class="mycheck" id=${todos[i].index}> <p class="text-todo" id=${todos[i].index}>${todos[i].description}</p><i class="fa-solid fa-ellipsis-vertical id=${todos[i].index}"></i></li>`;
+<li class="each-todo"><input type="checkbox" class="mycheck" id=${todos[i].index}> <p class="text-todo" id=${todos[i].index}>${todos[i].description}</p><i class="fa-solid fa-trash" id=${todos[i].index}></i></li>`;
         }
       }
       alltodos.innerHTML = content;

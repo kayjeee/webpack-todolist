@@ -144,3 +144,8 @@ ul {
 .linthrough {
   text-decoration: line-through;
 }
+
+.fa-trash {
+  position: absolute;
+  right: 10px;
+}
