@@ -85,7 +85,7 @@ Since this project is a front-end application, the focus is on the presentation 
 
 > the link to the deployed project.
 
-- [Live Demo Link](https://kayjeee.github.io/webpack-todolist/)
+- [Live Demo Link](https://kayjeee.github.io/webpack-todolist/dist)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
