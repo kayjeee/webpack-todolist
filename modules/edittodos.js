@@ -36,7 +36,6 @@ const updatetodo = (description, id) => {
   document.location.reload();
 };
 
-
 // Define a function `edittodo`
 const edittodo = () => {
   // Get all elements with class `text-todo`

@@ -30,6 +30,4 @@ const interacttodo = () => {
   });
 };
 
-
-
 export default interacttodo;
