@@ -41,27 +41,41 @@ class TodoList {
     }
   }
 
-  createTodo() {
-    const Todos = JSON.parse(localStorage.getItem('todos')) || [];
-    if (this.description.value === '') {
-      alert('desc cannot be Empty');
-    } else {
-      // If the description input is not empty,
-      //  create a new todo object and add it to the array of todos
-      const index = Todos.length + 1;
-      Todos.push({
-        index,
-        description: this.description.value,
-        completed: false,
-      });
-      // Save the updated array of todos to local storage
-      localStorage.setItem('todos', JSON.stringify(Todos));
-      // Clear the description input and update the todo list
-      this.description.value = '';
-      this.todosList();
-      document.location.reload();
-    }
+createTodo() {
+  // Trim the description input value and assign it to the 'description' variable
+  const description = this.description.value.trim();
+
+  // Check if the description is empty
+  if (description === '') {
+    alert('Description cannot be empty');
+    return;
   }
+
+  // Retrieve the todos from local storage or initialize an empty array if it doesn't exist
+  const todos = JSON.parse(localStorage.getItem('todos')) || [];
+
+  // Calculate the index for the new todo by adding 1 to the length of the existing todos
+  const index = todos.length + 1;
+
+  // Create a new todo object and add it to the todos array
+  todos.push({
+    index,
+    description,
+    completed: false,
+  });
+
+  // Save the updated array of todos to local storage
+  localStorage.setItem('todos', JSON.stringify(todos));
+
+  // Clear the description input
+  this.description.value = '';
+
+  // Update the todo list
+  this.todosList();
+
+  // Reload the page to reflect the changes
+  document.location.reload();
+}
 }
 
 export default TodoList;

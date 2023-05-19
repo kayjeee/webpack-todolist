@@ -9,26 +9,33 @@ const updatetodo = (description, id) => {
   // Get the existing todos from localStorage, or initialize an empty array
   const Todos = JSON.parse(localStorage.getItem('todos')) || [];
 
+  // Check if the description is empty
   if (description === '') {
     // If the description is empty, show an alert message and do nothing
-    alert('desc cannot be Empty');
-  } else {
-    // Otherwise, find the todo item with the given id in the Todos array
-    const search = Todos.find((todo) => todo.index.toString() === id);
-
-    if (search !== undefined) {
-      // If a matching todo item was found, update its description and index
-      search.description = description;
-      search.index = id;
-      localStorage.setItem('todos', JSON.stringify(Todos));
-    }
-
-    // Refresh the todo list on the page
-    const refresh = new TodoList();
-    refresh.todosList();
-    document.location.reload();
+    alert('Description cannot be empty');
+    return;
   }
+
+  // Find the todo item with the given id in the Todos array
+  const todo = Todos.find((item) => item.index.toString() === id);
+
+  // If a matching todo item was found
+  if (todo) {
+    // Update its description and index
+    todo.description = description;
+    todo.index = id;
+    // Save the updated Todos array to localStorage
+    localStorage.setItem('todos', JSON.stringify(Todos));
+  }
+
+  // Refresh the todo list on the page
+  const refresh = new TodoList();
+  refresh.todosList();
+
+  // Reload the page to reflect the changes
+  document.location.reload();
 };
+
 
 // Define a function `edittodo`
 const edittodo = () => {
