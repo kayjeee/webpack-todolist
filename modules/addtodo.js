@@ -19,7 +19,7 @@ const addTodo = () => {
     // Prevent the default form submission behavior
     e.preventDefault();
     // Create a new `TodoList` object using the `inputvalue` parameter
-    const todo = new TodoList(inputvalue);
+    const todo = new TodoList(inputvalue.value);
     // Call the `createTodo()` method on the `todo` object to create a new todo item
     todo.createTodo();
   });

@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-alert */
 class TodoList {
   constructor(description) {
     this.description = description;

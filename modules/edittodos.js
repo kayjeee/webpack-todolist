@@ -11,6 +11,7 @@ const updatetodo = (description, id) => {
 
   if (description === '') {
     // If the description is empty, show an alert message and do nothing
+    // eslint-disable-next-line no-alert
     alert('desc cannot be Empty');
   } else {
     // Otherwise, find the todo item with the given id in the Todos array
